@@ -53,7 +53,7 @@ declare module YUITest
 		static areSame(expected:any, actual:any, message?:string ):void;
 	
 		//-------------------------------------------------------------------------
-		// Boolean Assertion Methods
+		// boolean Assertion Methods
 		//-------------------------------------------------------------------------
 	
 		/**
@@ -134,11 +134,11 @@ declare module YUITest
 		static isArray( actual:any, message?:string ):void;
 	
 		/**
-		 * Asserts that a value is a Boolean.
+		 * Asserts that a value is a boolean.
 		 * @param actual The value to test.
 		 * @param message The message to display if the assertion fails.
 		 */
-		static isBoolean( actual:any, message?:string ):void;
+		static isboolean( actual:any, message?:string ):void;
 	
 		/**
 		 * Asserts that a value is a function.

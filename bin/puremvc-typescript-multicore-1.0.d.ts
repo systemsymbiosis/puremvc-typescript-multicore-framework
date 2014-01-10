@@ -10,7 +10,7 @@ declare module puremvc
 	{
 		executeCommand( notification:INotification ):void;
 		registerCommand( notificationName:string, commandClassRef:Function ):void;
-		hasCommand( notificationName:string ):bool;
+		hasCommand( notificationName:string ):boolean;
 		removeCommand( notificationName:string ):void;
 	}
 
@@ -19,15 +19,15 @@ declare module puremvc
 	{
 		registerCommand( notificationName:string, commandClassRef:Function ):void;
 		removeCommand( notificationName:string ): void;
-		hasCommand( notificationName:string ):bool;
+		hasCommand( notificationName:string ):boolean;
 		registerProxy( proxy:IProxy ):void;
 		retrieveProxy( proxyName:string ):IProxy;
 		removeProxy( proxyName:string ):IProxy;
-		hasProxy( proxyName:string ):bool;
+		hasProxy( proxyName:string ):boolean;
 		registerMediator( mediator:IMediator ):void;
 		retrieveMediator( mediatorName:string ):IMediator;
 		removeMediator( mediatorName:string ):IMediator;
-		hasMediator( mediatorName:string ):bool;
+		hasMediator( mediatorName:string ):boolean;
 		notifyObservers( notification:INotification ):void;
 	}
 
@@ -48,7 +48,7 @@ declare module puremvc
 		registerProxy( proxy:IProxy ):void;
 		removeProxy( proxyName:string ):IProxy;
 		retrieveProxy( proxyName:string ):IProxy;
-		hasProxy( proxyName:string ):bool;
+		hasProxy( proxyName:string ):boolean;
 	}
 
 	export interface INotification
@@ -72,7 +72,7 @@ declare module puremvc
 		setNotifyMethod( notifyMethod:Function ):void;
 		setNotifyContext( notifyContext:any ):void;
 		notifyObserver( notification:INotification ):void;
-		compareNotifyContext( object:any ):bool;
+		compareNotifyContext( object:any ):boolean;
 	}
 
 	export interface IProxy
@@ -93,7 +93,7 @@ declare module puremvc
 		registerMediator( mediator:IMediator ):void;
 		retrieveMediator( mediatorName:string ):IMediator;
 		removeMediator( mediatorName:string ):IMediator;
-		hasMediator( mediatorName:string ):bool;
+		hasMediator( mediatorName:string ):boolean;
 	}
 
     export class Observer
@@ -107,7 +107,7 @@ declare module puremvc
         private getNotifyContext(): any;
         public setNotifyContext(notifyContext: any): void;
         public notifyObserver(notification: INotification): void;
-        public compareNotifyContext(object: any): bool;
+        public compareNotifyContext(object: any): boolean;
     }
 
     export class View
@@ -124,7 +124,7 @@ declare module puremvc
         public registerMediator(mediator: IMediator): void;
         public retrieveMediator(mediatorName: string): IMediator;
         public removeMediator(mediatorName: string): IMediator;
-        public hasMediator(mediatorName: string): bool;
+        public hasMediator(mediatorName: string): boolean;
         static instanceMap: Object;
         static MULTITON_MSG: string;
         static getInstance(key: string): IView;
@@ -141,7 +141,7 @@ declare module puremvc
         public initializeController(): void;
         public executeCommand(notification: INotification): void;
         public registerCommand(notificationName: string, commandClassRef: Function): void;
-        public hasCommand(notificationName: string): bool;
+        public hasCommand(notificationName: string): boolean;
         public removeCommand(notificationName: string): void;
         static instanceMap: Object;
         static MULTITON_MSG: string;
@@ -159,7 +159,7 @@ declare module puremvc
         public registerProxy(proxy: IProxy): void;
         public removeProxy(proxyName: string): IProxy;
         public retrieveProxy(proxyName: string): IProxy;
-        public hasProxy(proxyName: string): bool;
+        public hasProxy(proxyName: string): boolean;
         static MULTITON_MSG: string;
         static instanceMap: Object;
         static getInstance(key): IModel;
@@ -195,22 +195,22 @@ declare module puremvc
         public initializeView(): void;
         public registerCommand(notificationName: string, commandClassRef: Function): void;
         public removeCommand(notificationName: string): void;
-        public hasCommand(notificationName: string): bool;
+        public hasCommand(notificationName: string): boolean;
         public registerProxy(proxy: IProxy): void;
         public retrieveProxy(proxyName: string): IProxy;
         public removeProxy(proxyName: string): IProxy;
-        public hasProxy(proxyName: string): bool;
+        public hasProxy(proxyName: string): boolean;
         public registerMediator(mediator: IMediator): void;
         public retrieveMediator(mediatorName: string): IMediator;
         public removeMediator(mediatorName: string): IMediator;
-        public hasMediator(mediatorName: string): bool;
+        public hasMediator(mediatorName: string): boolean;
         public notifyObservers(notification: INotification): void;
         public sendNotification(name: string, body?: any, type?: string): void;
         public initializeNotifier(key: string): void;
         static MULTITON_MSG: string;
         static instanceMap: Object;
         static getInstance(key: string): IFacade;
-        static hasCore(key: string): bool;
+        static hasCore(key: string): boolean;
         static removeCore(key: string): void;
     }
 

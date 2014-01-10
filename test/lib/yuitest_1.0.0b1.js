@@ -628,7 +628,7 @@ YUITest.Assert = {
     },    
     
     //-------------------------------------------------------------------------
-    // Boolean Assertion Methods
+    // boolean Assertion Methods
     //-------------------------------------------------------------------------    
     
     /**
@@ -779,16 +779,16 @@ YUITest.Assert = {
     },
    
     /**
-     * Asserts that a value is a Boolean.
+     * Asserts that a value is a boolean.
      * @param {Object} actual The value to test.
      * @param {String} message (Optional) The message to display if the assertion fails.
-     * @method isBoolean
+     * @method isboolean
      * @static
      */
-    isBoolean : function (actual, message) {
+    isboolean : function (actual, message) {
         YUITest.Assert._increment();
         if (typeof actual != "boolean"){
-            throw new YUITest.UnexpectedValue(YUITest.Assert._formatMessage(message, "Value should be a Boolean."), actual);
+            throw new YUITest.UnexpectedValue(YUITest.Assert._formatMessage(message, "Value should be a boolean."), actual);
         }    
     },
    
@@ -988,7 +988,7 @@ YUITest.ArrayAssert = {
      * if available.
      * @param {Array} haystack The array to search.
      * @param {Function} matcher The function to run on each value.
-     * @return {Boolean} True if any value, when run through the matcher,
+     * @return {boolean} True if any value, when run through the matcher,
      *      returns true.
      * @method _some
      * @private
@@ -1766,11 +1766,11 @@ YUITest.Mock.Value.Any        = YUITest.Mock.Value(function(){});
 
 /**
  * Predefined matcher to match boolean values.
- * @property Boolean
+ * @property boolean
  * @static
  * @type Function
  */
-YUITest.Mock.Value.Boolean    = YUITest.Mock.Value(YUITest.Assert.isBoolean);
+YUITest.Mock.Value.boolean    = YUITest.Mock.Value(YUITest.Assert.isboolean);
 
 /**
  * Predefined matcher to match number values.
@@ -1878,7 +1878,7 @@ YUITest.TestCase.prototype = {
      * Asserts that a given condition is true. If not, then a YUITest.AssertionError object is thrown
      * and the test fails.
      * @method assert
-     * @param {Boolean} condition The condition to test.
+     * @param {boolean} condition The condition to test.
      * @param {String} message The message to display if the assertion fails.
      */
     assert : function (condition, message){
@@ -2376,22 +2376,22 @@ YUITest.Event = (function() {
      * @param {HTMLElement} target The target of the given event.
      * @param {String} type The type of event to fire. This can be any one of
      *      the following: keyup, keydown, and keypress.
-     * @param {Boolean} bubbles (Optional) Indicates if the event can be
+     * @param {boolean} bubbles (Optional) Indicates if the event can be
      *      bubbled up. DOM Level 3 specifies that all key events bubble by
      *      default. The default is true.
-     * @param {Boolean} cancelable (Optional) Indicates if the event can be
+     * @param {boolean} cancelable (Optional) Indicates if the event can be
      *      canceled using preventDefault(). DOM Level 3 specifies that all
      *      key events can be cancelled. The default 
      *      is true.
      * @param {Window} view (Optional) The view containing the target. This is
      *      typically the window object. The default is window.
-     * @param {Boolean} ctrlKey (Optional) Indicates if one of the CTRL keys
+     * @param {boolean} ctrlKey (Optional) Indicates if one of the CTRL keys
      *      is pressed while the event is firing. The default is false.
-     * @param {Boolean} altKey (Optional) Indicates if one of the ALT keys
+     * @param {boolean} altKey (Optional) Indicates if one of the ALT keys
      *      is pressed while the event is firing. The default is false.
-     * @param {Boolean} shiftKey (Optional) Indicates if one of the SHIFT keys
+     * @param {boolean} shiftKey (Optional) Indicates if one of the SHIFT keys
      *      is pressed while the event is firing. The default is false.
-     * @param {Boolean} metaKey (Optional) Indicates if one of the META keys
+     * @param {boolean} metaKey (Optional) Indicates if one of the META keys
      *      is pressed while the event is firing. The default is false.
      * @param {int} keyCode (Optional) The code for the key that is in use. 
      *      The default is 0.
@@ -2399,10 +2399,10 @@ YUITest.Event = (function() {
      *      associated with the key being used. The default is 0.
      */
     function simulateKeyEvent(target /*:HTMLElement*/, type /*:String*/, 
-                                 bubbles /*:Boolean*/,  cancelable /*:Boolean*/,    
+                                 bubbles /*:boolean*/,  cancelable /*:boolean*/,    
                                  view /*:Window*/,
-                                 ctrlKey /*:Boolean*/,    altKey /*:Boolean*/, 
-                                 shiftKey /*:Boolean*/,   metaKey /*:Boolean*/, 
+                                 ctrlKey /*:boolean*/,    altKey /*:boolean*/, 
+                                 shiftKey /*:boolean*/,   metaKey /*:boolean*/, 
                                  keyCode /*:int*/,        charCode /*:int*/) /*:Void*/                             
     {
         //check target    
@@ -2563,10 +2563,10 @@ YUITest.Event = (function() {
      * @param {String} type The type of event to fire. This can be any one of
      *      the following: click, dblclick, mousedown, mouseup, mouseout,
      *      mouseover, and mousemove.
-     * @param {Boolean} bubbles (Optional) Indicates if the event can be
+     * @param {boolean} bubbles (Optional) Indicates if the event can be
      *      bubbled up. DOM Level 2 specifies that all mouse events bubble by
      *      default. The default is true.
-     * @param {Boolean} cancelable (Optional) Indicates if the event can be
+     * @param {boolean} cancelable (Optional) Indicates if the event can be
      *      canceled using preventDefault(). DOM Level 2 specifies that all
      *      mouse events except mousemove can be cancelled. The default 
      *      is true for all events except mousemove, for which the default 
@@ -2583,13 +2583,13 @@ YUITest.Event = (function() {
      *      point the event occured. The default is 0.
      * @param {int} clientY (Optional) The y-coordinate on the client at which
      *      point the event occured. The default is 0.
-     * @param {Boolean} ctrlKey (Optional) Indicates if one of the CTRL keys
+     * @param {boolean} ctrlKey (Optional) Indicates if one of the CTRL keys
      *      is pressed while the event is firing. The default is false.
-     * @param {Boolean} altKey (Optional) Indicates if one of the ALT keys
+     * @param {boolean} altKey (Optional) Indicates if one of the ALT keys
      *      is pressed while the event is firing. The default is false.
-     * @param {Boolean} shiftKey (Optional) Indicates if one of the SHIFT keys
+     * @param {boolean} shiftKey (Optional) Indicates if one of the SHIFT keys
      *      is pressed while the event is firing. The default is false.
-     * @param {Boolean} metaKey (Optional) Indicates if one of the META keys
+     * @param {boolean} metaKey (Optional) Indicates if one of the META keys
      *      is pressed while the event is firing. The default is false.
      * @param {int} button (Optional) The button being pressed while the event
      *      is executing. The value should be 0 for the primary mouse button
@@ -2602,12 +2602,12 @@ YUITest.Event = (function() {
      *      argument is ignored for all other events. The default is null.
      */
     function simulateMouseEvent(target /*:HTMLElement*/, type /*:String*/, 
-                                   bubbles /*:Boolean*/,  cancelable /*:Boolean*/,    
+                                   bubbles /*:boolean*/,  cancelable /*:boolean*/,    
                                    view /*:Window*/,        detail /*:int*/, 
                                    screenX /*:int*/,        screenY /*:int*/, 
                                    clientX /*:int*/,        clientY /*:int*/,       
-                                   ctrlKey /*:Boolean*/,    altKey /*:Boolean*/, 
-                                   shiftKey /*:Boolean*/,   metaKey /*:Boolean*/, 
+                                   ctrlKey /*:boolean*/,    altKey /*:boolean*/, 
+                                   shiftKey /*:boolean*/,   metaKey /*:boolean*/, 
                                    button /*:int*/,         relatedTarget /*:HTMLElement*/) /*:Void*/
     {
         
@@ -2784,10 +2784,10 @@ YUITest.Event = (function() {
      * @param {String} type The type of event to fire. This can be any one of
      *      the following: click, dblclick, mousedown, mouseup, mouseout,
      *      mouseover, and mousemove.
-     * @param {Boolean} bubbles (Optional) Indicates if the event can be
+     * @param {boolean} bubbles (Optional) Indicates if the event can be
      *      bubbled up. DOM Level 2 specifies that all mouse events bubble by
      *      default. The default is true.
-     * @param {Boolean} cancelable (Optional) Indicates if the event can be
+     * @param {boolean} cancelable (Optional) Indicates if the event can be
      *      canceled using preventDefault(). DOM Level 2 specifies that all
      *      mouse events except mousemove can be cancelled. The default 
      *      is true for all events except mousemove, for which the default 
@@ -2798,7 +2798,7 @@ YUITest.Event = (function() {
      *      been used. The default value is 1.
      */
     function simulateUIEvent(target /*:HTMLElement*/, type /*:String*/, 
-                                   bubbles /*:Boolean*/,  cancelable /*:Boolean*/,    
+                                   bubbles /*:boolean*/,  cancelable /*:boolean*/,    
                                    view /*:Window*/,        detail /*:int*/) /*:Void*/
     {
         
@@ -3586,7 +3586,7 @@ YUITest.PageManager = YUITest.Util.mix(new YUITest.EventTarget(), {
             
             /**
              * Indicates if the TestRunner will log events or not.
-             * @type Boolean
+             * @type boolean
              * @property _log
              * @private
              * @static
@@ -3596,7 +3596,7 @@ YUITest.PageManager = YUITest.Util.mix(new YUITest.EventTarget(), {
             /**
              * Indicates if the TestRunner is waiting as a result of
              * wait() being called.
-             * @type Boolean
+             * @type boolean
              * @property _waiting
              * @private
              * @static
@@ -3605,7 +3605,7 @@ YUITest.PageManager = YUITest.Util.mix(new YUITest.EventTarget(), {
             
             /**
              * Indicates if the TestRunner is currently running tests.
-             * @type Boolean
+             * @type boolean
              * @private
              * @property _running
              * @static
@@ -4205,7 +4205,7 @@ YUITest.PageManager = YUITest.Util.mix(new YUITest.EventTarget(), {
             
             /**
              * Indicates if the TestRunner is waiting for a test to resume
-             * @return {Boolean} True if the TestRunner is waiting, false if not.
+             * @return {boolean} True if the TestRunner is waiting, false if not.
              * @method isWaiting
              * @static
              */
@@ -4216,7 +4216,7 @@ YUITest.PageManager = YUITest.Util.mix(new YUITest.EventTarget(), {
             /**
              * Indicates that the TestRunner is busy running tests and therefore can't
              * be stopped and results cannot be gathered.
-             * @return {Boolean} True if the TestRunner is running, false if not.
+             * @return {boolean} True if the TestRunner is running, false if not.
              * @method isRunning
              */
             isRunning: function(){
@@ -4284,7 +4284,7 @@ YUITest.PageManager = YUITest.Util.mix(new YUITest.EventTarget(), {
         
             /**
              * Runs the test suite.
-             * @param {Boolean} oldMode (Optional) Specifies that the <= 2.8 way of
+             * @param {boolean} oldMode (Optional) Specifies that the <= 2.8 way of
              *      internally managing test suites should be used.             
              * @return {Void}
              * @method run

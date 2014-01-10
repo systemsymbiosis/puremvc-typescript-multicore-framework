@@ -40,7 +40,7 @@ module puremvc
 		 * @param viewComponent
 		 * 		The view component handled by this <code>Mediator</code>.
 		 */
-		constructor( mediatorName:string=null, viewComponent:any=null )
+		constructor( public mediatorName:string=null, viewComponent:any=null )
 		{
 			super();
 
@@ -100,7 +100,7 @@ module puremvc
 		 */
 		listNotificationInterests():string[]
 		{
-			return new string[];
+			return new Array<string>();
 		}
 
 		/**
